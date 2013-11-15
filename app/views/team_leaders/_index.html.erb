@@ -1,0 +1,29 @@
+<div class="well">
+<h1>Listing team_leaders</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @team_leaders.each do |team_leader| %>
+      <tr id= "tr_<%= team_leader.id %>">
+        <td><%= team_leader.user.name %></td>
+        <td><%= link_to 'Show', team_leader, :remote =>  true %></td>
+        <td><%= link_to 'Edit', edit_team_leader_path(team_leader), :remote =>  true %></td>
+        <td><%= link_to 'Destroy', team_leader, :remote =>  true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+<div class="well">
+  <%= link_to 'New Team leader', new_team_leader_path,:remote =>  true %>
+</div>  

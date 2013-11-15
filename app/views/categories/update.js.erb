@@ -1,0 +1,5 @@
+<% if @success %>
+	$("#content-display").html("<%= escape_javascript(render('show')) %>");
+<% else %>
+	$("#error_explanation").html("<%= escape_javascript(render(:partial => 'layouts/error_messages', :locals => { :target => @sub_admin } )) %>");
+<% end %>

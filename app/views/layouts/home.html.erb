@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BookafyApplication</title>
+  <%= stylesheet_link_tag    "home/home_layout", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+		<div class="span3"></div>
+		<div class="span6">
+		<% if user_signed_in?%>
+			<%= link_to "Edit Profile", client_path(current_user.id)%> | 
+			<%= link_to "Log Out", destroy_user_session_path, :method => :delete %> | 
+			<%= link_to "View Dashboard"%>
+		<% else %>
+			<h1><%= link_to "Join Us", new_client_path %> | 
+			<%= link_to "Sign in", new_user_session_path %> </h1>
+		<% end %>
+		
+		<%= yield %>
+		
+		</div>
+		<div class="span3"></div>
+	</div>	
+	
+
+</body>
+</html>

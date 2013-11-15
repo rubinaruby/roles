@@ -1,0 +1,31 @@
+<div class="well">
+<h1>Listing categories</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr id= "tr_<%= category.id %>">
+        <td><%= category.name %></td>
+        <td><%= category.description %></td>
+        <td><%= link_to 'Show', category, :remote =>  true %></td>
+        <td><%= link_to 'Edit', edit_category_path(category), :remote =>  true %></td>
+        <td><%= link_to 'Destroy', category, :remote =>  true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+<div class="well">
+  <%= link_to 'New Category', new_category_path, :remote =>  true %>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+<div id="login-wraper" style="text-align:center;">
+	<legend class="signin_text" style="line-height:70px;">Sign in to <span class="blue">Bookafy</span></legend>
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class=>"form login-form") do |f| %>
+	<div class="login_body">
+		<div>
+			<%= f.label :email, :class=>"label_font" %>
+			<%= f.email_field :email, :autofocus => true %>
+		</div>
+
+	  	<div>
+			<%= f.label :password, :class=>"label_font" %>
+	  		<legend style="padding-bottom:25px"><%= f.password_field :password %></legend>
+	  	</div>
+
+	</div>
+	<div class="footer">
+		<% if devise_mapping.rememberable? -%>
+		<label class="checkbox inline">
+			<input type="checkbox" id="inlineCheckbox1" value="option1"> <span class="label_font">Remember me</span>
+		</label>
+		<button type="submit" class="btn btn-success" style="box-shadow: none;margin-left: 15px;padding: 7px 25px;background-image: none;">Login</button>
+		<% end -%>
+	</div>
+				    
+	<% end %>
+</div>
+<footer class="white navbar-fixed-bottom">
+	Don't have account yet? <%= link_to 'Register', new_client_path, :class => "btn btn-black" %>
+</footer>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

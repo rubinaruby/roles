@@ -1,0 +1,19 @@
+<div class ="well">
+<h1>New team_leader</h1>
+
+<%= simple_form_for(@team_leader, :remote =>  true) do |f| %>
+	<%= f.simple_fields_for :user do |u|%>
+	<div class="form-inputs">
+		<%= u.input :email %>
+	<div>
+	<div class="form-inputs">		
+		<%= u.input :password, hint: false, error_html: { id: 'password_error'} %>
+	</div>	
+	<div class="form-inputs">	
+		<%= u.input :password_confirmation %>
+	</div>	
+	<% end %>
+	<%= f.submit%>
+	<% end %>
+<%= link_to 'Back', team_leaders_path,:remote=>true %>
+</div>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BookafyApplication</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+	.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}
+  </style>	
+</head>
+<body id="body-index">
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="navbar-inner black-gradient">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/">
+            <span class="rad">Book</span>afy
+          </a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong> Welcome </strong> <%#= current_user.type %>
+                <% if not user_signed_in? %>
+				Welcome User
+				<% else%>
+				<%= current_user.role_type%>
+				
+               <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><%#= link_to '<i class="icon-cog"></i> Edit Account'.html_safe, edit_user_registration_path %></li>
+                      <li><%= link_to '<i class="icon-envelope"></i> Edit Profile'.html_safe %> </a></li>
+                      <li class="divider"></li>
+                      <li> <%= link_to '<i class="icon-off"></i> Sign out'.html_safe%></li>
+                  </ul>
+				<% end %>
+              </li>
+            </ul>
+         
+            <form class="navbar-search pull-right">
+              <input type="text" class="span2 search-query" placeholder="Search"></form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--row-fluid-->
+    <div class="row-fluid">
+      <div class="span12">&nbsp;</div>
+    </div>
+	<!--row-fluid hidden-phone hidden-tablet -->
+	    <div class="row-fluid hidden-phone hidden-tablet">
+	      <div class="span12 top-stats">
+	        <ul class="top-nav-boxes">
+	          <li class="first">
+	            <div class="notifications-wrapper">
+	                <div class="notifications"> <strong>12</strong>
+	                </div>
+	            </div>
+				<%= link_to '<i class="icon-calendar"></i> Calendar'.html_safe %>
+	          </li>
+	          <li>
+				<%= link_to '<i class="icon-inbox"></i> Inbox'.html_safe, "#"%>
+	          </li>
+	          <li>
+	              <div class="notifications-wrapper">
+	                <div class="notifications"> <strong>3</strong>
+	                </div>
+	              </div>
+
+				<%= link_to '<i class="icon-comments"></i> Reviews'.html_safe%>
+	          </li>
+	          <li>
+				<%= link_to '<i class="icon-user"></i> Customers'.html_safe%>
+	          </li>
+	          <li>
+	              <%= link_to '<i class="icon-cog"></i> Settings'.html_safe, setting_path%>
+	          </li>
+	          <li>
+	             <%= link_to '<i class="icon-question-sign"></i> Support'.html_safe, "#"%>
+			  </li>
+	        </ul>
+	      </div>
+	    </div>
+
+	    <!--container-fluid main-container-->
+	    <div class="container-fluid main-container"> 
+	      <div class="row-fluid">
+	        <div class="span12">
+	          <div class="container-fluid content-wrapper">
+	          	
+				<%= yield %>
+	           <!-- All the contents will be displayed here-->
+	          </div>  
+	         <!--span12 ends --> 
+	        </div>
+	        <div class="row-fluid">
+	          <div class="span12">&nbsp;</div>
+	        </div>
+	      </div>
+	    </div>
+     
+    <footer class="black-gradient">
+  <a class="brand pull-right" href="index.html">
+    <span class="rad">Book</span>afy
+  </a>
+  <div class="square-turtle pull-left">
+    <p>
+      2013 © All rights reserved
+    </p>
+  </div>
+</footer>
+
+<!--[if lte IE 8]>
+<script language="javascript" type="text/javascript" src="scripts/flot/excanvas.min.js"></script>
+<![endif]-->
+    </body>
+</html>

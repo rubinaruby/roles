@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="span6">
+          <div class="register-info-wraper">
+        <div id="register-info">
+        
+          <h1>You are about 30 seconds away from using this awesome app. Good choice!</h1>
+        
+          <ul dir="rtl">
+            <li>Blah blah blah</li>
+            <li>That's why this app is so awesome</li>
+            <li>!So register, like, right NOW</li>
+            <li>Or don't, who cares</li>
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+    <div class="span6">
+    	<div id="register-wraper">
+    	<%= simple_form_for(@client) do |f| %>
+			<%= f.simple_fields_for :user do |u|%>
+			<p>
+          		<span class="blue" style="font-family: 'Lato', Helvetica, sans-serif;font-size: 22px;color: #016F8C;font-weight: 400;"> Start Your Free Trial</span6>
+      		</p>
+			<%= link_to image_tag('facebook_button.png', :class => 'facebook_button'), "#" %> <%= link_to image_tag('twitter_button.png', :class => 'facebook_button'), "#" %>
+
+       		<hr/>
+
+      		<%= u.input :email, :class => "input-huge", :placeholder => "Email Address(this will be your username)" %>
+			<%= u.input :password, hint: false, error_html: { id: 'password_error'} %>
+			<%= u.input :password_confirmation %>
+  		<div class="footer">
+      	<label class="typica-label checkbox inline">
+        	  <input type="checkbox" id="inlineCheckbox1" value="option1"> I agree to something I will never read
+      	</label><br /> <br />
+      	<button type="submit" class="btn btn-success" style="padding: 10px 40px;
+    background-image: none;
+    box-shadow: none;">Register</button>
+    	</div>
+    	<% end %>
+    	<% end %>
+		</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+            
+-
